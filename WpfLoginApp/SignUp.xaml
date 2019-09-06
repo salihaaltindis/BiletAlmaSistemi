@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfLoginApp.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLoginApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="SignUp" Height="496" Width="560" FontSize="20" Background="#FFBEFFEB" Icon="Resimler/split.jpg" WindowStartupLocation="CenterScreen">
+
+    <Border Margin="20" Padding="20" Background="#FF2B2928" CornerRadius="20">
+        <StackPanel>
+            <Label Content="Sign Up" Foreground="White" FontSize="20" HorizontalAlignment="Center"></Label>
+            <Separator Background="White" />
+
+            <Label Content="User Name" Foreground="White" FontSize="18"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtusername" Foreground="White" VerticalContentAlignment="Center" Background="#FF9BA3B0" Margin="2" TextChanged="UserName_TextChanged"/>
+                <Label Visibility="Visible" Name="userNameValidate" Foreground="red"  Content="" Grid.Column="2"></Label>
+            </Grid>
+
+
+            <Label Content="Name" Foreground="White" FontSize="18"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtname" Foreground="White" VerticalContentAlignment="Center" Background="#FF9BA3B0" Margin="2" TextChanged="Name_TextChanged"/>
+                <Label  Visibility="Visible" Name="nameValidate" Content="" Foreground="red" Grid.Column="2" ></Label>
+            </Grid>
+
+
+            <Label Content="Password" Foreground="White" FontSize="18"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <PasswordBox x:Name="txtpassword" VerticalContentAlignment="Center"   Foreground="White" Background="#FF9BA3B0" Margin="2" PasswordChanged="PasswordChanged"/>
+                <Label Visibility="Visible" Name="passwordValidate" Content=""  Foreground="red" Grid.Column="2"></Label>
+            </Grid>
+
+
+            <Label Content="Again Password" Foreground="White" FontSize="18"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <PasswordBox x:Name="txtagainpassword" VerticalContentAlignment="Center"  Foreground="White" Background="#FF9BA3B0" Margin="2" PasswordChanged="PasswordAgainChanged"/>
+                <Label Visibility="Visible" Name="passwordAgainValidate" Content="" Foreground="Red" Grid.Column="2"></Label>
+            </Grid>
+
+
+            <Button FontSize="18" Content="Register" Background="#FF9BA3B0" Foreground="White" Margin="10,10,293,10" Height="29" RenderTransformOrigin="0.037,1.194" Click="Button_Click"/>
+        </StackPanel>
+
+    </Border>
+</Window>

@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="WpfLoginApp.BiletAlma"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfLoginApp"
+             mc:Ignorable="d" 
+             Foreground="Black"
+
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="800" d:DesignWidth="800" Loaded="UserControl_Loaded">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        
+        <Border Margin="10" Grid.Column="0" >
+            <StackPanel HorizontalAlignment="Left" Width="180" Height="300" VerticalAlignment="Top">
+                <Label Margin="0 10 0 0" Content="Nereden" FontWeight="Bold"/>
+                <ComboBox SelectionChanged="Neredencmbx_SelectionChanged" Margin="0 10 0 0"  Name="neredencmbx"  IsEditable="True"></ComboBox>
+
+                <Label  Margin="0 10 0 0"  Content="Nereye" FontWeight="Bold"/>
+                <ComboBox  Margin="0 10 0 0"  Name="nereyecmbx" IsEditable="True"></ComboBox>
+
+                <Label Margin="0 10 0 0" Content="Tarih" FontWeight="Bold"/>
+                <DatePicker SelectedDate="{Binding DateTime, StringFormat='dd.MM.yyyy'}" Margin="0 10 0 0"  Name="seferTarihi" ></DatePicker>
+                <Button  Margin="10 10" Click="Button_Click" >Seferleri Listele</Button>
+
+            </StackPanel>
+        </Border>
+
+   
+        
+        <Grid Grid.Column="1" Grid.Row="0"  Visibility="Visible" x:Name="datagrid">
+          
+            <DataGrid x:Name="seferListeleGrid"  AutoGenerateColumns="false" CanUserAddRows="False"
+Margin="5,10,5,70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+RowBackground="#fff" FontWeight="Bold" Foreground="#525252"
+ScrollViewer.CanContentScroll="True" MaxHeight="390"
+AlternatingRowBackground="#f2f2f2" BorderBrush="#000" BorderThickness="1"
+ScrollViewer.HorizontalScrollBarVisibility="Visible"
+ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="nereden" Binding="{Binding Path='nereden'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="nereye" Binding="{Binding Path='nereye'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="tarih"  Binding="{Binding Path='tarih'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="saat" Binding="{Binding Path='saat'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="kontenjan" Binding="{Binding Path='kontenjan'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="fiyat" Binding="{Binding Path='fiyat'}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="sefer_id" Binding="{Binding Path='sefer_id'}" IsReadOnly="True" />
+                    <DataGridTemplateColumn >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="biletAl" Content="Bileti Al"  Click="KoltukSec_Click" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid   VerticalAlignment="Top" HorizontalAlignment="Center" Margin="1" x:Name="KoltukSecGrid" Background="AliceBlue" Grid.Column="1" Grid.Row="1">
+
+           
+        </Grid>
+
+    </Grid>
+</UserControl>

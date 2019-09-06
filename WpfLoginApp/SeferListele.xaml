@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WpfLoginApp.SeferListele"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLoginApp"
+        mc:Ignorable="d"
+         Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10" Width="500">
+                <Label Margin="0 10 0 0" Content="Nereden" FontWeight="Bold"/>
+                <TextBox Margin="0 10 0 0"  Name="neredentxt" ></TextBox>
+
+                <Label  Margin="0 10 0 0"  Content="Nereye" FontWeight="Bold"/>
+                <TextBox  Margin="0 10 0 0"  Name="nereyetxt" ></TextBox>
+
+                <Label Margin="0 10 0 0" Content="Tarih" FontWeight="Bold"/>
+                <TextBox  Margin="0 10 0 0"  Name="seferTarihitxt"></TextBox>
+                <Button Margin="10 10 10 10" Width="100" Content="Sefer"></Button>
+        </StackPanel>
+        
+        
+       
+    </Grid>
+</UserControl>
